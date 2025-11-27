@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-	background:#F2F2F2;
+	background: white;
     display: flex;
     justify-content: center;
     align-items: flex-start;
