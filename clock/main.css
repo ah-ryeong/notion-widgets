@@ -1,0 +1,341 @@
+body {
+    width:100vw;
+    height:100vh;
+    /* background:#1d1e22; */
+    /* transition: background .3s; */
+}
+
+body.dark-mode {
+    background:#FFF;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.clock-widget,
+.analog-clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.digital-clock-wrapper {
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% + 10px);
+    transform: translateX(-50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.time-of-day {
+    font-size: 10px;
+}
+
+.clock-widget {
+    width: 350px;
+    height: 350px;
+    border-radius: 40px;
+    background-color: #f5f5f5;
+    position: relative;
+}
+
+.analog-clock-container {
+    position: relative;
+}
+
+.analog-clock-hand-container {
+    position: absolute;
+    z-index: 1;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: #f5f5f5;
+    box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.25), -10px -4px 15px #ffffff;
+}
+
+.analog-clock-number-container {
+    width: 220px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+}
+
+.analog-clock-number {
+    color: #000;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+}
+
+.hand-container {
+    transform-origin: 100%;
+    /* transform: rotate(90deg); */
+    transition: all 0.05s ease-in-out;
+}
+
+/* Numbers Positions */
+.analog-clock-number_12 {
+    transform-origin: 0 0;
+    transform: rotate(0deg);
+}
+
+.analog-clock-number_1 {
+    transform-origin: center;
+    transform: rotate(30deg);
+}
+
+.analog-clock-number_2 {
+    transform-origin: center;
+    transform: rotate(60deg);
+}
+
+.analog-clock-number_3 {
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.analog-clock-number_4 {
+    transform-origin: center;
+    transform: rotate(120deg);
+}
+
+.analog-clock-number_5 {
+    transform-origin: center;
+    transform: rotate(150deg);
+}
+
+.analog-clock-number_6 {
+    transform-origin: center;
+    transform: rotate(180deg);
+}
+
+.analog-clock-number_7 {
+    transform-origin: center;
+    transform: rotate(210deg);
+}
+
+.analog-clock-number_8 {
+    transform-origin: center;
+    transform: rotate(240deg);
+}
+
+.analog-clock-number_9 {
+    transform-origin: center;
+    transform: rotate(270deg);
+}
+
+.analog-clock-number_10 {
+    transform-origin: center;
+    transform: rotate(300deg);
+}
+
+.analog-clock-number_11 {
+    transform-origin: center;
+    transform: rotate(330deg);
+}
+
+/* 숫자 내부 요소 역회전 - JavaScript로 동적 적용되지만 CSS도 백업용으로 추가 */
+.analog-clock-number_1 span,
+.analog-clock-number_1 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_2 span,
+.analog-clock-number_2 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_3 span,
+.analog-clock-number_3 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_4 span,
+.analog-clock-number_4 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_5 span,
+.analog-clock-number_5 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_6 span,
+.analog-clock-number_6 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_7 span,
+.analog-clock-number_7 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_8 span,
+.analog-clock-number_8 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_9 span,
+.analog-clock-number_9 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_10 span,
+.analog-clock-number_10 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.analog-clock-number_11 span,
+.analog-clock-number_11 div {
+    transform-origin: center;
+    display: inline-block;
+}
+
+.hand {
+    width: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+}
+
+.hour-hand {
+    z-index: 1;
+}
+.second-hand {
+    z-index: 3;
+}
+
+/* Hand Positions */
+.second-hand_color,
+.minute-hand_color,
+.hour-hand_color {
+    margin: 0 0 0 auto;
+    border-radius: 50px;
+}
+
+.second-hand_color {
+    height: 1px;
+    width: 100%;
+    background-color: #c72929;
+}
+
+.minute-hand_color {
+    height: 2px;
+    width: 70%;
+    background-color: #000;
+}
+
+.hour-hand_color {
+    height: 2px;
+    width: 50%;
+    border: 1px solid #fff;
+    background-color: #000;
+}
+
+.round-center-top {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.5),
+        1px 1px 2px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+.dark-mode-toggle-container {
+    top: 20px;
+    right: 20px;
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: #e4e4e4;
+    box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.12),
+        inset -1px -4px 4px rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #292929;
+    left: calc(100% - 20px);
+    transition: left 0.2s ease-in-out;
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+
+/* Mode Toggle */
+.digital-clock-wrapper.dark-mode {
+    color: #fff;
+}
+
+.minute-hand_color.dark-mode {
+    background-color: #fff;
+}
+
+.hour-hand_color.dark-mode {
+    border: 1px solid #292929;
+    background-color: #fff;
+}
+
+
+.round-center-top.dark-mode {
+    background-color: #292929;
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.08),
+        1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.analog-clock-number.dark-mode {
+    color: #fff;
+}
+
+.analog-clock-hand-container.dark-mode {
+    background-color: #292929;
+    box-shadow: -4px -4px 15px rgba(163, 163, 163, 0.2), 4px 4px 15px #000000;
+}
+
+.clock-widget.dark-mode {
+    background-color: #292929;
+}
+
+.dark-mode-toggle.dark-mode {
+    background-color: #f5f5f5;
+    left: 0%;
+}
+
+.dark-mode-toggle-container.dark-mode {
+    background: #292929;
+}
