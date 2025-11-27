@@ -4,6 +4,8 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
+    margin: 0;
+    padding: 0;
     /* background-color: #c2e6e8; */
 }
 
@@ -13,6 +15,8 @@ body {
     justify-content: center;
     height: 100vh;
     padding-top: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 button,
