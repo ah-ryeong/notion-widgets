@@ -18,8 +18,8 @@ body {
 
 .carculator {
     width: 100%;
-    max-width: 400px;
-    --button-size: min(20vw, 80px);
+    max-width: 280px;
+    --button-size: min(14vw, 56px);
     --button-width: var(--button-size);
     --button-height: var(--button-size);
 
@@ -33,14 +33,14 @@ body {
         "number-0 number-0 dot equal";
 
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, var(--button-height));
-    gap: 8px;
+    grid-template-rows: calc(var(--button-height) + 1rem) repeat(5, var(--button-height));
+    gap: 5.6px;
 
     box-shadow: -8px -8px 16px -10px rgba(255, 255, 255, 1),
         8px 8px 16px -10px rgba(0, 0, 0, 0.15);
 
-    padding: min(6vw, 24px);
-    border-radius: 20px;
+    padding: min(4.2vw, 16.8px);
+    border-radius: 14px;
     background-color: #f0f0f0;
     box-sizing: border-box;
 }
@@ -52,7 +52,7 @@ button {
     outline: none;
 
     border-radius: calc(var(--button-height) / 2);
-    font-size: min(6vw, 24px);
+    font-size: min(4.2vw, 16.8px);
     font-weight: normal;
     color: #999;
     background: linear-gradient(
@@ -72,7 +72,8 @@ button:active {
 .result {
     text-align: right;
     color: #666;
-    font-size: min(12vw, 48px);
-    padding: 0 min(5vw, 20px);
+    font-size: min(8.4vw, 33.6px);
+    padding: 0.7rem min(3.5vw, 14px) 0 min(3.5vw, 14px);
     line-height: var(--button-height);
+    align-self: start;
 }
